@@ -65,9 +65,10 @@ camera.position.z = 5;
 
 const planeGeometry = new THREE.PlaneGeometry(5, 5, 10, 10);
 const planeMaterial = new THREE.MeshPhongMaterial({
-  color: 0x781c68,
+  //color: 0x781c68,
   side: THREE.DoubleSide,
   flatShading: true,
+  vertexColors: true,
 }); //color in hexa decimal
 
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -83,6 +84,16 @@ for (let i = 0; i < array.length; i += 3) {
 
   array[i + 2] = z + Math.random();
 }
+
+const colors = [];
+for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
+  colors.push(0, 0, 1);
+}
+
+planeMesh.geometry.setAttribute(
+  "color",
+  new THREE.BufferAttribute(new Float32Array(colors), 3)
+);
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
 light.position.set(0, 0, 1);
