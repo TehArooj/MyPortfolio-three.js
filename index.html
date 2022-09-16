@@ -4,11 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
     <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital@1&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
     <script defer type="module" src="js/index.js"></script>
     <script src="/node_modules/three/examples/jsm/controls/OrbitControls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .font-exo {
+        font-family: "Exo 2", sans-serif;
+      }
+      .font-mono {
+        font-family: "Space Mono", monospace;
+      }
+    </style>
   </head>
-  <body class="m-0"></body>
+  <body class="m-0 antialiased">
+    <div
+      class="absolute text-center top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"
+    >
+      <div class="text-white">
+        <h1 class="text-2xl mb-2 font-medium font-mono">Tehreem Arooj</h1>
+        <p class="mb-8 font-exo text-4xl">
+          ONE WITH AN EVERLASTING DESIRE FOR THE UNKNOWN & UNTOLD
+        </p>
+        <a
+          href="https://github.com/TehArooj?tab=repositories "
+          class="mt-8 cursor-pointer border-2 text-black bg-white pl-5 pr-5 pt-2 pb-2 rounded-lg font-mono hover:bg-black hover:text-white hover:ease-in hover:duration-200"
+        >
+          View Work
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
