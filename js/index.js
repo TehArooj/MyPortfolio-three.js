@@ -118,6 +118,8 @@ const mouse = {
   y: undefined,
 };
 
+let lengthOfFrame = 3000;
+
 let frame = 0;
 const animate = () => {
   requestAnimationFrame(animate);
@@ -130,7 +132,7 @@ const animate = () => {
     planeMesh.geometry.attributes.position;
   for (let i = 0; i < array.length; i += 3) {
     //x
-    array[i] = originalPosotion[i] + Math.cos(frame + randomValues[i]) * 0.01;
+    array[i] = originalPosotion[i+20] + Math.cos(frame + randomValues[i]) * 0.01;
     //y
     array[i + 1] =
       originalPosotion[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.001;
@@ -161,7 +163,7 @@ const animate = () => {
 
   // animate the hover
 
-  /*const initialColor = {
+  const initialColor = {
     r: 0,
     g: 0.19,
     b: 0.4,
@@ -194,7 +196,7 @@ const animate = () => {
 
       color.needsUpdate = true;
     },
-  });*/
+  });
   //planeMesh.rotation.x += 0.01;
   //planeMesh.rotation.y += 0.01;
 };
@@ -213,6 +215,19 @@ addEventListener("mousemove", (event) => {
 
 
 const world2 = {
+  plane: {
+    width: 400,
+    height: 400,
+    widthSegments: 50,
+    heightSegments: 50,
+  },
+};
+
+
+// I will do the following changes for demo only 
+
+
+const boxPlane = {
   plane: {
     width: 400,
     height: 400,
