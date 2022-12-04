@@ -206,3 +206,17 @@ addEventListener("mousemove", (event) => {
   mouse.x = (event.clientX / innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
 });
+
+
+
+// I will do the following changes for demo only 
+
+
+const world2 = {
+  plane: {
+    width: 400,
+    height: 400,
+    widthSegments: 50,
+    heightSegments: 50,
+  },
+};
